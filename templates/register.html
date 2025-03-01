@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="POST" action="/register">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+
+        <h3>Select the correct images for authentication:</h3>
+        <div class="image-selection">
+            <label>
+                <input type="checkbox" name="images" value="cat">
+                <img src="{{ url_for('static', filename='images/cat.jpg') }}" alt="Cat">
+            </label>
+            <label>
+                <input type="checkbox" name="images" value="dog">
+                <img src="{{ url_for('static', filename='images/dog.jpg') }}" alt="Dog">
+            </label>
+            <label>
+                <input type="checkbox" name="images" value="car">
+                <img src="{{ url_for('static', filename='images/car.jpg') }}" alt="Car">
+            </label>
+            <label>
+                <input type="checkbox" name="images" value="tree">
+                <img src="{{ url_for('static', filename='images/tree.jpg') }}" alt="Tree">
+            </label>
+            <label>
+                <input type="checkbox" name="images" value="flower">
+                <img src="{{ url_for('static', filename='images/flower.jpg') }}" alt="Flower">
+            </label>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
