@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007BFF;
+}
+
+/* Button Styles */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Flash Message Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+/* Image Selection Styles */
+.image-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.image-selection label {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.image-selection input[type="checkbox"] {
+    display: none; /* Hide the checkbox */
+}
+
+.image-selection img {
+    width: 100px; /* Set a fixed width */
+    height: 100px; /* Set a fixed height */
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.image-selection input[type="checkbox"]:checked + img {
+    border: 2px solid #007BFF; /* Change border color when checked */
+}
